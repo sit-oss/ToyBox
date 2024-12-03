@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToyBox.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="20">
+            <!-- Checkbox Matrix -->
+            <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" RowDefinitions="Auto,Auto,Auto,Auto">
+                <Label Grid.Row="0" Grid.Column="1" Text="Read" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Write" />
+                <Label Grid.Row="0" Grid.Column="3" Text="Execute" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="User" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Group" />
+                <Label Grid.Row="3" Grid.Column="0" Text="Other" />
+
+                <!-- User Row -->
+                <CheckBox Grid.Row="1" Grid.Column="1" CheckedChanged="OnCheckBoxChanged" x:Name="UserRead" />
+                <CheckBox Grid.Row="1" Grid.Column="2" CheckedChanged="OnCheckBoxChanged" x:Name="UserWrite" />
+                <CheckBox Grid.Row="1" Grid.Column="3" CheckedChanged="OnCheckBoxChanged" x:Name="UserExec" />
+
+                <!-- Group Row -->
+                <CheckBox Grid.Row="2" Grid.Column="1" CheckedChanged="OnCheckBoxChanged" x:Name="GroupRead" />
+                <CheckBox Grid.Row="2" Grid.Column="2" CheckedChanged="OnCheckBoxChanged" x:Name="GroupWrite" />
+                <CheckBox Grid.Row="2" Grid.Column="3" CheckedChanged="OnCheckBoxChanged" x:Name="GroupExec" />
+
+                <!-- Other Row -->
+                <CheckBox Grid.Row="3" Grid.Column="1" CheckedChanged="OnCheckBoxChanged" x:Name="OtherRead" />
+                <CheckBox Grid.Row="3" Grid.Column="2" CheckedChanged="OnCheckBoxChanged" x:Name="OtherWrite" />
+                <CheckBox Grid.Row="3" Grid.Column="3" CheckedChanged="OnCheckBoxChanged" x:Name="OtherExec" />
+            </Grid>
+
+            <!-- Permissions Display -->
+            <Label Text="Permission Code:" Margin="0,20,0,5" />
+            <Entry x:Name="PermissionEntry" TextChanged="OnPermissionEntryChanged" Keyboard="Numeric" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
